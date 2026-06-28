@@ -1,0 +1,74 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f1a; color: #e0e0e0; }
+
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 2rem; background: #1a1a2e; border-bottom: 1px solid #2a2a4a;
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-brand { font-size: 1.3rem; font-weight: 700; color: #e50914; text-decoration: none; }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a { color: #ccc; text-decoration: none; font-size: 0.95rem; }
+.nav-links a:hover { color: #fff; }
+.btn-logout { background: #e50914; color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.9rem; }
+.btn-logout:hover { background: #c00; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+
+.page-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; }
+
+.movies-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1.2rem;
+}
+
+.movie-card {
+  background: #1a1a2e; border-radius: 8px; overflow: hidden;
+  cursor: pointer; transition: transform 0.2s; text-decoration: none; color: inherit;
+}
+.movie-card:hover { transform: scale(1.04); }
+.movie-card img { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; }
+.movie-card-info { padding: 0.6rem; }
+.movie-card-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.3; }
+.movie-card-rating { font-size: 0.8rem; color: #f5c518; }
+
+.auth-page { max-width: 420px; margin: 4rem auto; background: #1a1a2e; padding: 2rem; border-radius: 12px; }
+.auth-page h1 { margin-bottom: 1.5rem; font-size: 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: #aaa; }
+.form-group input { width: 100%; padding: 0.6rem 0.8rem; border-radius: 6px; border: 1px solid #333; background: #0f0f1a; color: #e0e0e0; font-size: 0.95rem; }
+.btn-primary { width: 100%; padding: 0.75rem; background: #e50914; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; margin-top: 0.5rem; }
+.btn-primary:hover { background: #c00; }
+.auth-link { margin-top: 1rem; text-align: center; font-size: 0.9rem; color: #aaa; }
+.auth-link a { color: #e50914; }
+.error-msg { color: #ff6b6b; font-size: 0.9rem; margin-bottom: 0.75rem; }
+
+.search-bar { display: flex; gap: 0.75rem; margin-bottom: 2rem; }
+.search-bar input { flex: 1; padding: 0.65rem 1rem; border-radius: 6px; border: 1px solid #333; background: #1a1a2e; color: #e0e0e0; font-size: 1rem; }
+.search-bar button { padding: 0.65rem 1.5rem; background: #e50914; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+
+.movie-detail { display: flex; gap: 2rem; }
+.movie-detail img { width: 240px; border-radius: 8px; flex-shrink: 0; }
+.movie-detail-info h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.movie-detail-meta { color: #aaa; margin-bottom: 1rem; font-size: 0.95rem; }
+.movie-detail-overview { line-height: 1.7; color: #ccc; margin-bottom: 1.5rem; }
+.btn-fav { padding: 0.65rem 1.5rem; background: #e50914; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+.btn-fav.added { background: #555; }
+
+.tab-bar { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }
+.tab-btn { padding: 0.5rem 1.2rem; border-radius: 20px; border: 1px solid #333; background: #1a1a2e; color: #aaa; cursor: pointer; font-size: 0.9rem; }
+.tab-btn.active { background: #e50914; color: #fff; border-color: #e50914; }
+.tab-btn:hover:not(.active) { border-color: #555; color: #fff; }
+
+.genres-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.genre-checkbox { display: flex; align-items: center; gap: 0.5rem; background: #1a1a2e; padding: 0.5rem 0.75rem; border-radius: 6px; cursor: pointer; }
+.genre-checkbox input { accent-color: #e50914; }
+
+.fav-remove { background: #333; color: #ff6b6b; border: none; padding: 0.4rem 0.75rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem; margin-top: 0.5rem; }
+.fav-remove:hover { background: #e50914; color: #fff; }
+
+.loading { text-align: center; padding: 3rem; color: #aaa; }
+
+@media (max-width: 600px) {
+  .movie-detail { flex-direction: column; }
+  .movie-detail img { width: 100%; }
+}
